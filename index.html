@@ -1,0 +1,39 @@
+<html>
+<head></head>
+<body>
+	<iframe style="width:100%;height:100%" id="ncw"></iframe>
+	<script>
+		var falha = true;
+		var i = 0;
+
+		function renova(){
+			if (i===0){
+				falha = true;
+				setTimeout(function(){
+					if (falha) {
+						i = 0;
+						renova();
+						
+					}
+				},30000);
+			}
+			document.getElementById('ncw').src= i+".html";
+			
+		}
+		document.getElementById('ncw').onload = function(){	
+			i++;
+			falha = false;
+			if (i !== 3){
+				renova();
+			}
+			else{
+				i = 0;
+				setTimeout(function(){
+					renova();
+				},10000);
+			}
+		}
+		renova();
+	</script>
+</body>
+</html>
