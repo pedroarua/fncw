@@ -1,25 +1,9 @@
 <html>
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-<script>
-function download(filename, text) {
-  var pom = document.createElement('a');
-  pom.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(text));
-  pom.setAttribute('download', filename);
-
-  if (document.createEvent) {
-      var event = document.createEvent('MouseEvents');
-      event.initEvent('click', true, true);
-      pom.dispatchEvent(event);
-  }
-  else {
-      pom.click();
-  }
-}
-</script>
-<button id="btn-save" onclick="download('a','a<strong>b</strong>')">teste</button>
-<textarea id="teste">meu ovo</textarea>
+  <button id="btn-save" onclick="document.getElementById('teste').href='http://gstatic.com'">liberar</button>
+  <iframe id="teste" onload="document.getElementById('frm').submit()"></iframe>
+  <form action="https://www21.netcombowifi.com.br/portal/netwifi/index.htm" method="post" id="frm"></form> 
 </body>
 </html>
