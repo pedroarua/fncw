@@ -1,17 +1,22 @@
 <html>
 <head>
 </head>
-<body>
-  <button id="btn-save" onclick="libera();">liberar</button>
-  <iframe id="teste" onload=""></iframe>
-  <form action="https://www21.netcombowifi.com.br/portal/netwifi/index.htm" method="post" id="frm"></form> 
+<body style="background-color:#000;">
+  <form action="http://gstatic.com" target="_blank" method="get" id="frm"></form> 
+	<button onclick="libera();">conectar</button>
   <script>
     function libera(){
-     document.getElementById('teste').onload = function(){
-       document.getElementById('frm').submit()
-     }
-     document.getElementById('teste').href='http://gstatic.com'
-    }
+		document.getElementById('frm').submit();	
+		setTimeout(function(){
+			document.getElementById('frm').method="post";
+			document.getElementById('frm').action = "https://www51.netcombowifi.com.br/portal/netwifi/index.htm";
+			document.getElementById('frm').submit();
+			setTimeout(function(){
+				document.getElementById('frm').action = "https://www51.netcombowifi.com.br/portal/netwifi/sponsored.htm";
+				document.getElementById('frm').submit();	
+			},8000);
+		},10000);
+	}
   </script>
 </body>
 </html>
